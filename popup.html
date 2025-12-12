@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <style>
+            body { width: 400px; padding: 15px; font-family: Arial; background: #1a1a2e; color: #eee; }
+            h1 { font-size: 18px; margin-bottom: 15px; }
+            .filters { background: #16213e; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+            .filter-row { display: flex; gap: 10px; margin-bottom: 10px; }
+            .filter-group { flex: 1; }
+            label { display: block; font-size: 11px; color: #888; margin-bottom: 4px; }
+            input, select { width: 100%; padding: 8px; border: 1px solid #333; border-radius: 6px; background: #0f0f23; color: #fff; }
+            button { width: 100%; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+            button:hover { background: #45a049; }
+            #status { text-align: center; padding: 10px; color: #888; }
+            .results { max-height: 400px; overflow-y: auto; }
+            .listing { background: #16213e; border-radius: 10px; padding: 12px; margin-bottom: 10px; border-left: 4px solid #4CAF50; }
+            .score { font-size: 20px; font-weight: bold; color: #4CAF50; }
+            .listing-title { font-weight: 600; margin: 8px 0; }
+            .tag { padding: 3px 8px; border-radius: 4px; font-size: 11px; background: #0f0f23; margin-right: 5px; display: inline-block; }
+            .tag.price { color: #FF5722; }
+            .tag.battery { color: #2196F3; }
+            a { color: #4CAF50; text-decoration: none; font-size: 12px; }
+          </style>
+  </head>
+  <body>
+      <h1>📱 Carousell Phone Finder</h1>
+    <div class="filters">
+        <div class="filter-row">
+              <div class="filter-group">
+                      <label>Max Price (S$)</label>
+                      <input type="number" id="maxPrice" value="550">
+              </div>div>
+              <div class="filter-group">
+                      <label>Min Battery %</label>
+                      <input type="number" id="minBattery" value="85">
+              </div>div>
+        </div>div>
+        <button id="scanBtn">🔍 Scan Listings</button>button>
+    </div>div>
+    <div id="status"></div>div>
+    <div class="results" id="results"></div>div>
+    <script src="popup.js"></script>
+  </body>
+</html></label></label></h1>
+  </body>
+      </style>
+  </head>
+</html>
