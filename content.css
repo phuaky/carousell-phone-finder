@@ -1,0 +1,212 @@
+/* Carousell Phone Finder - Content Styles */
+
+/* Value Score Badge */
+.cpf-score-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cpf-score-badge.excellent {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    box-shadow: 0 2px 8px rgba(56, 239, 125, 0.4);
+}
+
+.cpf-score-badge.good {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cpf-score-badge.fair {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 2px 8px rgba(245, 87, 108, 0.4);
+}
+
+.cpf-score-badge.poor {
+    background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
+}
+
+/* Battery Health Indicator */
+.cpf-battery-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.cpf-battery-indicator.high {
+    color: #38ef7d;
+}
+
+.cpf-battery-indicator.medium {
+    color: #ffd700;
+}
+
+.cpf-battery-indicator.low {
+    color: #f5576c;
+}
+
+/* Listing Card Overlay */
+.cpf-listing-overlay {
+    position: relative;
+}
+
+.cpf-listing-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Highlight Best Value */
+.cpf-best-value {
+    border: 3px solid #38ef7d !important;
+    box-shadow: 0 0 20px rgba(56, 239, 125, 0.3) !important;
+}
+
+.cpf-best-value::after {
+    content: '★ BEST VALUE';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #38ef7d;
+    color: #000;
+    padding: 2px 12px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 800;
+    z-index: 1001;
+}
+
+/* Price Analysis */
+.cpf-price-analysis {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    font-weight: 600;
+    z-index: 1000;
+}
+
+.cpf-price-analysis.below-avg {
+    background: rgba(56, 239, 125, 0.9);
+    color: #000;
+}
+
+.cpf-price-analysis.above-avg {
+    background: rgba(245, 87, 108, 0.9);
+    color: #fff;
+}
+
+/* Info Tooltip */
+.cpf-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    line-height: 1.5;
+    max-width: 250px;
+    z-index: 10000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.cpf-score-badge:hover + .cpf-tooltip,
+.cpf-tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Loading Spinner */
+.cpf-loading {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: cpf-spin 0.8s linear infinite;
+}
+
+@keyframes cpf-spin {
+    to {
+          transform: rotate(360deg);
+    }
+}
+
+/* Scan Progress Bar */
+.cpf-scan-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    background-size: 200% 100%;
+    animation: cpf-gradient 2s linear infinite;
+    z-index: 99999;
+}
+
+@keyframes cpf-gradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Filter Panel */
+.cpf-filter-panel {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    z-index: 99998;
+    min-width: 200px;
+}
+
+.cpf-filter-panel h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.cpf-filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #555;
+}
+
+.cpf-filter-option input {
+    margin-right: 8px;
+}
